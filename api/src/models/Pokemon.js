@@ -4,9 +4,38 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('pokemon', {
+    id: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    }, 
+    img: {
+      type: DataTypes.TEXT,
+      get() {
+        return this.getDataValue('img') || "https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1"
+      }
     },
+    hp: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    attack:{
+      type: DataTypes.INTEGER
+    },
+    defense:{
+      type: DataTypes.INTEGER
+    },
+    created: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   });
+  
+
 };
