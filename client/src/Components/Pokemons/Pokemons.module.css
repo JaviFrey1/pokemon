@@ -1,0 +1,14 @@
+
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    border: 50px;
+    border-color: black;
+} 
+    
+
+/*
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+*/

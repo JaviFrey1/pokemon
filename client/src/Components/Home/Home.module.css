@@ -1,0 +1,49 @@
+.reloadBtn{
+    background-color: rgb(141, 162, 184);
+    border-color:rgb(96, 173, 255);
+    border-radius: 12%;
+    /* font-family: sans-serif; */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align:justify;
+}
+.nav{
+    background-color:  #c6b0b0 ;
+}
+.home{
+    font-weight: bold;
+    font-family: fantasy;
+    color: green;
+    background-color: black;
+    text-align:justify;
+    
+}
+
+.createLink{
+    background-color: #e4cfcf;
+    color: black;
+    /* margin-top: 10px; */
+}
+.create{
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    background-color:  #e3c3c3 ;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.page{
+    background-color:    #f9f9f9 ;
+
+}
+
+.select{
+    background-color: transparent;
+    margin-top: 10px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}

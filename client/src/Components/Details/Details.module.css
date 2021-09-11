@@ -1,0 +1,88 @@
+
+.details{
+    background-color: #fff6ed  ;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    height:46.2rem;     
+
+}
+.details > * {
+    flex-basis: 100%;
+}
+.nam{
+    /* margin-left: -20rem; */
+    /* margin-right: 20px; */
+    background-color: black;
+}
+.name{
+    font-size: 45px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    height: 50px;
+    width: 300px;
+}
+
+.imgDiv{
+    background-color:  #e0e0e0;
+    border: black solid 3px;
+    border-radius: 8px;
+    opacity: 0.99;
+    margin-top: 200px;
+    height: 310px;
+}
+.img{
+    width: 300px;
+    height: 300px;
+}
+
+.stats{
+    background-color: #CBCBCB;
+    margin-top: -1.5em;
+    height: 300px;
+    /* justify-content: center; */
+    align-self: center;
+}
+.stats > * {
+    height: 28px;
+    margin-right: 2em;
+    background-color: #a9a9a9; 
+}
+
+.hpDiv{
+    /* background-color: indigo; */
+    margin-left: 2rem;
+    margin-top: 2rem;
+    
+}
+.attackDiv{
+    /* background-color: greenyellow; */
+    margin-left: 2rem;
+    margin-top: .5rem;
+}
+.defenseDiv{
+    /* background-color: red; */
+    margin-left: 2rem;
+    margin-top: .5rem;
+}
+.heightDiv{
+    /* background-color: blue; */
+    margin-left: 2rem;
+    margin-top: .5rem;
+}
+.weightDiv{
+    /* background-color: goldenrod; */
+    margin-left: 2rem;
+    margin-top: .5rem;
+}
+
+.typesDiv{
+    /* background-color: saddlebrown; */
+    margin-left: 2rem;
+    margin-top: .5rem;
+    text-transform: capitalize;
+    height: 70px;
+}

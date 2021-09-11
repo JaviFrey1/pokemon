@@ -1,0 +1,23 @@
+.nav{
+    position: fixed;
+    float: left;
+    width: 100px;
+    height: 45px;
+    margin-left: 15px;
+    margin-top: 10px;
+    background-color: #d0a6a6;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    
+}
+.btn{
+    text-decoration: none;
+    color: #585858;
+}
+.nav:hover{
+    border: 1px;
+   border-color: #585858;
+   background-color:  #ff8686;
+}

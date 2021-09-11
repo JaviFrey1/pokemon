@@ -1,0 +1,25 @@
+/* .paged{
+    display: flex;
+} */
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+
+.btn{
+    background-color: #fff2f2;
+    border-radius: 4px;
+    width: 3.5em;
+    height: 3em;
+    margin-right: 1em;
+}
+.btn:hover{
+    opacity: .4;
+}
+
+.num{
+    font-weight: bold;
+}
