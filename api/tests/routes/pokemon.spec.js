@@ -19,6 +19,9 @@ describe('Pokemon routes', () => {
   describe('GET /pokemons', () => {
     it('should get 200', () =>
       agent.get('/pokemons').expect(200)
+      .then(() => done(new Error('It requires a valid name')))
+      .catch( ()=> done())
     );
+    
   });
 });

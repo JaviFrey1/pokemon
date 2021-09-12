@@ -11,7 +11,7 @@ const rutis = require('./TypeRout')
 // Ejemplo: router.use('/auth', authRouter);
 // router.use('/pokemonsAPP', pokeRutes)
 
-router.use('/app', pokeRoutes)
+router.use('/pokemons', pokeRoutes)
 
 router.use('/type', rutis)
 

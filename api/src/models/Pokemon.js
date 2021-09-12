@@ -7,15 +7,15 @@ module.exports = (sequelize) => {
     id: {
       primaryKey: true,
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false
+      defaultValue: DataTypes.UUIDV1,
+      // allowNull: false
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     }, 
     img: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING, 
       get() {
         return this.getDataValue('img') || "https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1"
       }
@@ -30,12 +30,22 @@ module.exports = (sequelize) => {
     defense:{
       type: DataTypes.INTEGER
     },
+    height:{
+      type: DataTypes.STRING
+    },
+    weight:{
+      type: DataTypes.STRING
+    },
     created: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false
+      defaultValue: true
     }
   });
-  
-
+  sequelize.define('type', {
+    name: {
+      type: DataTypes.STRING,
+    
+    }
+  });
 };

@@ -4,13 +4,13 @@ const axios = require('axios');
 const getPokeApi = async (req, res) => {
     let name = req.query.name;
     try {
-        if (name && name !== undefined && name !== null) {
+        if (name !== undefined && name && name !== '' ) {
             let pokemon = {};
             pokemon = await Pokemon.findOne({
                 where: { name },
                 indclude: {
                     model: Type,
-                    attributes: ['name']
+                    attributes: ['id','name']
                 }
             })
             if (pokemon) res.json(pokemon);
@@ -24,16 +24,19 @@ const getPokeApi = async (req, res) => {
                         hp: urlName.data.stats[0].base_stat,
                         attack: urlName.data.stats[1].base_stat,
                         defense: urlName.data.stats[2].base_stat,
-                        types: urlName.data.types.map(el => el.type.name)
+                        speed: urlName.data.stats[5].base_stat,
+                        height: urlName.data.height,
+                        weight: urlName.data.weight,
                     }
-                    
+                    let types = urlName.data.types.map(el => el.type.name)
+                    pokemon = {...pokemon, types:types}
                     return res.json(pokemon);
                 }
             }
         }
-        const urlApi = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=40');
+        const urlApi = await axios.get('http://pokeapi.co/api/v2/pokemon?limit=150');
         const db = await Pokemon.findAll({
-            attributes: ['name', 'img', 'attack', 'defense'],
+            attributes: ['name', 'img', 'attack', 'defense', 'id'],
             include: {
                 model: Type,
                 attributes: ['name']
@@ -47,14 +50,15 @@ const getPokeApi = async (req, res) => {
                 img: el.data.sprites.other.dream_world.front_default,
                 attack: el.data.stats[1].base_stat,
                 defense: el.data.stats[2].base_stat,
-                types : el.data.types.map(el => el.type.name)
             }
-            return newPokemon;
+            let types = el.data.types.map(el => el.type);
+            types.map(el => delete el.url)
+            return newPokemon = {...newPokemon, types: types};
         })
         details = details.concat(db);
         return res.json(
             {
-                howManyPokes: details.length, //details sigue siendo un array je
+                ManyPokes: details.length, //details sigue siendo un array je
                 pokemones: details
 
             })
@@ -63,10 +67,50 @@ const getPokeApi = async (req, res) => {
     }
 }
 
+let pokeDB = async () => {
+    try{
+        let Db = await Pokemon.findAll({
+            include: Type
+        });
+        let created = [];
+        for(let i = 0; i< Db.length; i++){
+            created.push({
+                name: Db[i].name,
+                id: Db[i].id,
+                img,
+                types: Db[i].types.map(el => el.type),
+                hp: Db[i].hp,
+                attack: Db[i].attack,
+                defense: Db[i].defense,
+                speed: Db[i].speed,
+                height: Db[i].height,
+                weight:Db[i].weight
+            });
+        }
+        return created;
+    } catch(e){
+        console.log(e);
+    }
+}
+
+const allPoke = async () => {
+    try{
+        let apiPokes = await getPokeApi();
+        let db =  await pokeDB();
+        let concated = db.concat(apiPokes);
+        return concated;
+
+    }catch(e){
+        console.log(e);
+    }
+}
+
 const getIds = async (req, res) => {
-    let id = req.params.id;
-    if (!id) res.status(404).json('Invalid Id');
+    const id = req.params.id;
+    if (!id || parseInt(id) <0) res.status(404).json('Invalid Id');
     try {
+        // const dbGet = await
+
         if (!id.includes('-')) {
             const urlId = await axios.get('https://pokeapi.co/api/v2/pokemon/' + id);
             let pokemon = {
@@ -76,22 +120,29 @@ const getIds = async (req, res) => {
                 hp: urlId.data.stats[0].base_stat,
                 attack: urlId.data.stats[1].base_stat,
                 defense: urlId.data.stats[2].base_stat,
-                types: urlId.data.types.map(el => {
-                    let temp = {};
-                    return temp = { name: el.type.name }
-                })
+                speed: urlId.data.stats[5].base_stat,
+                height: urlId.data.height,
+                weight: urlId.data.weight,
             }
-            return res.json(pokemon)
+           
+            let types = urlId.data.types.map(el => {
+                let temp = {}
+                return temp = {name: el.type.name}
+            });
+
+            pokemon = {...pokemon, types: types};
+            return res.json(pokemon);
+
         } else {
+            // console.log(await 'im in')
             const pokemon = await Pokemon.findByPk(String(id), {
                 include: {
                     model: Type,
                     attributes: ['name']
                 }
             });
-            if (pokemon) {
-                return res.json(pokemon);
-            } else {
+            if (pokemon)return res.json(pokemon);
+            else {
                 res.status(400).json('Invalid ID')
             }
         }
@@ -99,36 +150,40 @@ const getIds = async (req, res) => {
         console.log(e)
     }
 }
-
-const postPokemons = async (req,res) => {
-    let {name,img,hp,attack,defense,types} = req.body;
-    if(!name) res.status(404).json('Invalid Name');
-
-    let newPokemon = await Pokemon.create({
-        name,
-        img,
-        hp,
-        attack,
-        defense
-    });
-    newPokemon.addType(types)
-    res.json(newPokemon.name)
-}    
-
 const getTypes = async (req,res) => {
     try{
         const dbTypes = await Type.findAll({attributes: ['name', 'id']})
-        if(dbTypes.length < 1){
+        if(dbTypes.length === 0){
             let res = await axios.get('https://pokeapi.co/api/v2/type');
-            let types = res.data.results.map(el => {return {name: el.name}})
+            var types = res.data.results.map(el => {return {name: el.name}})
             
             Type.bulkCreate(types);
-            return res.json(types)
+            console.log(types)
+            // return res.json(types);
         }
         res.json(dbTypes);
     } catch (e){
         console.log(e)
     }
+}
+
+const postPokemons = async (req,res) => {
+    let {name,img,hp,attack,defense,speed,height,weight,types} = req.body;
+    if(!name) return res.status(404).json('Invalid Name');
+
+    name = name.toLowerCase();
+    let newPokemon = await Pokemon.create({
+        name,
+        img,
+        hp,
+        attack,
+        defense,
+        speed,
+        height,
+        weight
+    });
+    newPokemon.addType(types)
+    res.json(newPokemon)
 }
 
 module.exports = {getPokeApi, getIds, postPokemons, getTypes}
