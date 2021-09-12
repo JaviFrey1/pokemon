@@ -41,22 +41,24 @@ export default function Home() {
     function handleFilterType(click) { //filtrado
         click.preventDefault();
         dispatch(filterByType(click.target.value));
+        setCurrentPage(1);
     }
 
     function handleFilterCreated(click) {
         click.preventDefault();
         dispatch(filterIfCreated(click.target.value));
+        setCurrentPage(1);
     }
 
     function handleOrder(click) { //ordenamiento
         click.preventDefault();
-        setCurrentPage(1);
         dispatch(orderByName(click.target.value));
+        setCurrentPage(1);
     }
     function handleAttack(click) {
         click.preventDefault();
-        setCurrentPage(1);
         dispatch(orderByAttack(click.target.value));
+        setCurrentPage(1);
     }
 
     function handleChange(e) {
@@ -104,6 +106,16 @@ export default function Home() {
                         <option value='electric'>Electric</option>
                         <option value='ground'>Ground</option>
                         <option value='fairy'>Fairy</option>
+
+                        <option value='rock'>Rock</option>
+                        <option value='ghost'>Ghost</option>
+                        <option value='steel'>Steel</option>
+                        <option value='psychic'>Psychic</option>
+                        <option value='ice'>Ice</option>
+                        <option value='dragon'>Dragon</option>
+                        <option value='stedarkel'>Stedarkel</option>
+                        <option value='shadow'>Shadow</option>
+                        <option value='unknown'>Unknown</option>
                     </select>
                 </div>
                 <div>

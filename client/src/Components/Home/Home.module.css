@@ -41,7 +41,9 @@
 .select{
     background-color: transparent;
     margin-top: 10px;
+    
 }
+
 .container{
     display: flex;
     justify-content: center;

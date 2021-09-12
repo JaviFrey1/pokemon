@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { getTypes, cleanTypes } from "../../Actions/actions";
+import { getTypes } from "../../Actions/actions";
 import Nav from "../Nav/Nav";
 import pika from '../../Imgs/pika.jpg'
 import styles from '../Create/Create.module.css'
@@ -36,7 +36,7 @@ export default function Create() {
     const [succes, setSucces] = useState('');
     const [err, setErr] = useState('');
     const [types, setTypes] = useState([]);
-
+    // const pokes = useSelector(store => store.types)
     const storeType = useSelector(store => store.types);
 
     // const clear = () => {
@@ -46,7 +46,7 @@ export default function Create() {
     useEffect(() => {
         dispatch(getTypes());
         // return () =>  clear();
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         setTypes(storeType);
@@ -54,13 +54,13 @@ export default function Create() {
 
     useEffect(() => {
         setPoke({ ...poke, types: valTypes });
-    }, []);
+    }, [valTypes]);
 
     const send = (el, event) => {
         if (el.name !== '') {
             let res = handleSubmit(event);
             setSucces('Success');
-            console.log('res', res);
+            console.log(res);
         } else {
             event.preventDefault();
             setErr('error');
@@ -68,8 +68,9 @@ export default function Create() {
     }
 
     const handleType = (change) => {
-        if (change.target.checked) setValTypes([change.target.value, ...valTypes]);
-        else {
+        if (change.target.checked) {
+            setValTypes([change.target.value, ...valTypes]);
+        } else {
             setValTypes(valTypes.filter(el => el !== change.target.value));
         }
     }
@@ -100,15 +101,14 @@ export default function Create() {
     const handleHeight = (change) => {
         setPoke({ ...poke, height: change.target.value });
     }
-    const handleImg = (change) => {
-        setPoke({...poke, img: change.target.value})
-    }
+    // const handleImg = (change) => {
+    //     setPoke({...poke, img: change.target.value})
+    // }
 
     const handleSubmit = (submit) => {
         submit.preventDefault();
         let upload = postPokemons(poke);
 
-        //clean
         setPoke({
             name: '',
             img: '',
@@ -140,7 +140,7 @@ export default function Create() {
                             <div className={styles.type}>STATS</div>
                             <div className={styles.stat}>
                                 <label>Life Points:     </label>
-                                <input className={styles.inputHp} type='text' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
+                                <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
                             </div>
                             <div className={styles.stat}>
                                 <label>Attack Points:     </label>
@@ -156,11 +156,11 @@ export default function Create() {
                             </div>
                             <div className={styles.stat}>
                                 <label>Height:     </label>
-                                <input  className={styles.statH} type='text' onChange={handleHeight} placeholder='Height' value={poke.height} name='height' min='0' />
+                                <input className={styles.statH} type='text' onChange={handleHeight} placeholder='Height' value={poke.height} name='height' min='0' />
                             </div>
                         </div>
                         <div className={styles.imgDiv}>
-                            <img className={styles.img} src={pika} alt='' onChange={handleImg} />
+                            <img className={styles.img} src={pika} alt='' />
                         </div>
                     </div>
                     <div>

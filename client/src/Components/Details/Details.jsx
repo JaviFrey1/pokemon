@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
-import { getIds, cleanId } from '../../Actions/actions';
+import { getIds } from '../../Actions/actions';
 import styles from '../Details/Details.module.css';
 
 
@@ -27,11 +27,13 @@ export default function Details() {
     useEffect(() => {
         getDetails();
         // return () => clear();
-    }, [])
+    },[]) //Component did Mount
 
     useEffect(() => {
         setStats(details);
     }, [details])
+
+
 
 
     return (
@@ -68,6 +70,14 @@ export default function Details() {
                             <div className={styles.weightDiv}>
                                 <label>Weight: </label>
                                 {stats.weight}
+                            </div>
+                            <div className={styles.weightDiv}>
+                                <label>Speed: </label>
+                                {stats.speed}
+                            </div>
+                            <div className={styles.weightDiv}>
+                                <label>Id: </label>
+                                {stats.id}
                             </div>
                             <div className={styles.typesDiv}>
                             {stats.types.map((el, i) =>

@@ -13,17 +13,23 @@
 .nam{
     /* margin-left: -20rem; */
     /* margin-right: 20px; */
-    background-color: black;
+    background-color: #a9a9a9;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+
 }
 .name{
     font-size: 45px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: uppercase;
     margin-top: 100px;
+    margin-left: 2em;
     border-radius: 5px;
-    background-color: blue;
+    border: tomato solid 3px;
+    background-color:  #e8917e ;
     height: 50px;
     width: 300px;
+    display: center;
 }
 
 .imgDiv{
@@ -85,4 +91,5 @@
     margin-top: .5rem;
     text-transform: capitalize;
     height: 70px;
+    /* border-color: black solid 10px; */
 }

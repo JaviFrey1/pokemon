@@ -33,7 +33,7 @@
 }
 .typeDiv{
     /* display: row; */
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     margin-top: 2px;
 }
 .typeDiv > * {
