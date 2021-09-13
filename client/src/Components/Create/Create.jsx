@@ -159,22 +159,22 @@ export default function Create() {
                             </div>
                         </div>
                         <div className={styles.imgDiv}>
-                            <img className={styles.img} src={pika} alt='' />
+                            <img className={styles.img} src={pika} alt='Pokemon' />
                         </div>
                     </div>
                     <div>
                         <h3 className={styles.type}> TYPES</h3>
                         {
-                            types.map((el, i) =>
-                                <div className={styles.typeDiv}>
-                                    <input type='checkbox' onChange={handleType} key={i} value={el.id} id={el.id} />
+                            types.map((el, j) =>
+                                <div className={styles.typeDiv} >
+                                    <input type='checkbox' onChange={handleType} key={j}  value={el.id} id={el.id} />
                                     {el.name}
                                 </div>
                             )
                         }
                     </div>
-                    <div>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
-                    <div>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON</h2>}</div>
+                    <div className={styles.succes}>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
+                    <div className={styles.error}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON</h2>}</div>
                     <div><input type='submit' value='CREATE!'  className={styles.btn}/></div>
 
                 </div>
