@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Nav from "../Nav/Nav";
 import { useState, useEffect } from "react";
@@ -81,7 +82,7 @@ export default function Details() {
                             </div>
                             <div className={styles.typesDiv}>
                             {stats.types.map((el, i) =>
-                                <p key={i}>{el.name}</p>
+                                <p key={i} className={styles.type}>{el.name}</p>
                             )}
                             </div>
                         </div>

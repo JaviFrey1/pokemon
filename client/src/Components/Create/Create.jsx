@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
@@ -30,6 +31,7 @@ export default function Create() {
         defense: 0,
         height: 0,
         weight: 0,
+        speed: 0,
         types: []
     });
     const [errorName, setErrorName] = useState('');
@@ -101,9 +103,6 @@ export default function Create() {
     const handleHeight = (change) => {
         setPoke({ ...poke, height: change.target.value });
     }
-    // const handleImg = (change) => {
-    //     setPoke({...poke, img: change.target.value})
-    // }
 
     const handleSubmit = (submit) => {
         submit.preventDefault();
@@ -140,7 +139,7 @@ export default function Create() {
                             <div className={styles.type}>STATS</div>
                             <div className={styles.stat}>
                                 <label>Life Points:     </label>
-                                <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
+                                <input className={styles.inputHp} type='text' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
                             </div>
                             <div className={styles.stat}>
                                 <label>Attack Points:     </label>
@@ -176,7 +175,7 @@ export default function Create() {
                     </div>
                     <div>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
                     <div>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON</h2>}</div>
-                    <div><input type='submit' value='CREATE!' /></div>
+                    <div><input type='submit' value='CREATE!'  className={styles.btn}/></div>
 
                 </div>
             </form>

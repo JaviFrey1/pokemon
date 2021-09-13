@@ -63,3 +63,12 @@
 .name{
     font-weight: bold;
 }
+
+.btn{
+    width: 12em;
+    height: 3em;
+    font-weight: bold;
+    background-color: #ff957e;
+    border-radius: 5px;
+    border: black solid 1px;
+}

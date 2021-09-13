@@ -11,8 +11,8 @@
     height: 250px;
     background-color:   #fff6e6;
     box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
--webkit-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
--moz-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
+    -webkit-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
+    -moz-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
     
 }
 .card:hover{

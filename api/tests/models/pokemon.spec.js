@@ -17,6 +17,11 @@ describe('Pokemon model', () => {
       it('should work when its a valid name', () => {
         Pokemon.create({ name: 'Pikachu' });
       });
-    });
+      it('should not work when there is no name', () => {
+        Pokemon.create({ weight: '15' })
+        .then(() => done(new Error('It requires a valid name')))
+        .catch(() => done());
+      });
+    });    
   });
 });

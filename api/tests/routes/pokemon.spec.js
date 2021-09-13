@@ -24,4 +24,11 @@ describe('Pokemon routes', () => {
     );
     
   });
+  describe('GET /type', () => {
+    it('should get 200', () =>
+      agent.get('/type').expect(200)
+      .then(() => new Error('Error with types'))
+      .catch( ()=> done())
+    );
+  });
 });
