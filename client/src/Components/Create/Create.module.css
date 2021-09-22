@@ -5,7 +5,7 @@
     align-self: center;
     margin-left: 950px;
     margin-top: -120px;
-    
+    /* background-color: #89b9b4; */
 }
 .img{
     background-color: white;
@@ -20,70 +20,165 @@
 .error{
     color: red;
     /* background-color: black; */
-    border: red solid 2px;
+    /* border: red solid 2px; */
     text-transform: uppercase;
+    
 }
 
 .type{
-    background-color:  #e3c3c3 ;
+    background-color:  #3b605d ;
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.typeDiv{
-    /* display: row; */
-    /* background-color: greenyellow; */
-    margin-top: 2px;
-}
-.typeDiv > * {
-    background-color: chartreuse;
-}
+
+
 
 .stat{
     display: flex;
     width: fit-content;
-    margin-left: 600px;
+    /* margin-left: 600px; */
+    
 }
-.stat > * {
-    margin-right: 20px;
-}
+
 .inputHp{
-    margin-left: 20px;
+    margin-left: 37px;
+    
 }
 .inputDefense{
-    margin-left: -13px;
+    margin-left: 5px;
+}
+
+.statA{
+    margin-left: 17.6px;
 }
 .statW{
-    margin-left: 41px;
+    margin-left: 60px;
 }
 .statH{
-    margin-left: 44px;
+    margin-left: 62.5px;
+}
+
+.statSps{
+    margin-left: 65.5px;
 }
 .name{
     font-weight: bold;
+    /* background-color: #89b9b4; */
 }
 
 .btn{
     width: 12em;
     height: 3em;
     font-weight: bold;
-    background-color: #ff957e;
+    background-color: #3b605d;
     border-radius: 5px;
     border: black solid 1px;
 }
 
 .succes{
     margin-top: 1em;
-    border: lightgreen solid 2px;
+    /* border: lightgreen solid 2px; */
+    /* background-color: #89b9b4; */
 }
 .succes > *{
     color: lightgreen;
 }
+
 .error{
     margin-top: 1em;
-    border: red solid 1px;
+    /* border: red solid 1px; */
+    
 }
+
 .error > *{
     color: red;
+    /* background-color: #89b9b4; */
+}
+
+
+.divt{
+    background-color: #234643;
+    border: grey solid 1px;
+    display: row;
+    justify-content: center;
+    height: 150px;
+    margin-left: 400px;
+    margin-right: 200px;
+    width: 700px;
+    border-radius: 4px;
+}
+
+.statContainer{
+    background-color: #234643;
+    padding: 0%;
+    height: 150px;
+    display: table;
+    justify-content: center;
+    width: 400px;
+    margin-left: 520px;
+    border-radius: 4px;
+    border: grey solid 1px;
+}
+.statContainer > * {
+    align-self: center;
+    justify-self: center;
+    margin-left: 80px;
+    
+}
+
+.statContainer > :nth-child(1){
+    margin-top: 10px;
+}
+
+.tName{
+    margin-top: 25px;
+    margin-right: 1px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    width: 15px;
+    /* background-color: white; */
+    /* background-color: #89b9b4; */
+}
+.typeDiv{
+    /* display: row; */
+    /* background-color: #d1a79e; */
+    width: 50px;
+    margin-top: 2px;
+    text-transform: capitalize;
+    margin-top: 25px;
+    margin-right: 14px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    
+}
+
+.some{
+    /* background-color: #89b9b4;  */
+       font-weight: bold;
+    height: 30px;
+}
+
+.someC{
+    /* background-color: #89b9b4; */
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.som{
+    /* background-color: #89b9b4; */
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.bacData{
+    /* background-color: #89b9b4; */
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.inpN{
+    border-radius: 4px;
+    /* background-color: #89b9b4; */
 }

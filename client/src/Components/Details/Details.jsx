@@ -17,17 +17,13 @@ export default function Details() {
     const details = useSelector(store => store.details);
     const { id } = useParams();
 
-    // const clear = () => {
-    //     dispatch(cleanId());
-    // }
-
     const getDetails = () => {
         if (Object.keys(stats).length === 0) dispatch(getIds(id))
     }
 
     useEffect(() => {
         getDetails();
-        // return () => clear();
+    
     },[]) //Component did Mount
 
     useEffect(() => {

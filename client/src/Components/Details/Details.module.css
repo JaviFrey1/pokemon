@@ -1,6 +1,6 @@
 
 .details{
-    background-color: #fff6ed  ;
+    background-color: #234643  ;
     display: flex;
     justify-content: center;
     /* flex-wrap: wrap; */
@@ -15,8 +15,7 @@
     /* margin-right: 20px; */
     /* background: rgb(71,71,71);
     background: linear-gradient(90deg, rgba(71,71,71,1) 0%, rgba(113,112,112,1) 20%, rgba(240,240,240,1) 100%);   */
-    background: rgb(251,220,166);
-background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 66%, rgba(240,240,240,1) 89%); 
+    background-color: #89b9b4 ; 
     justify-content: center;
     backdrop-filter: blur(2px);
 
@@ -28,8 +27,8 @@ background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 6
     margin-top: 100px;
     margin-left: 2em;
     border-radius: 5px;
-    border: tomato solid 3px;
-    background-color:  #e8917e ;
+    border:   #234643  solid 3px;
+    background-color:  #3b605d  ; 
     height: 50px;
     width: 300px;
     display: center;
@@ -37,12 +36,17 @@ background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 6
 
 .imgDiv{
     /* background-color:  #e0e0e0; */
-    background-color: #fff6e0;
-    border: black solid 3px;
+    background-color: #c6fffa;
+    /* border: #89b9b4 solid 1px; */
+    border-top: black solid 2px;
+    border-left: black solid 2px;
     border-radius: 8px;
     opacity: 0.99;
     margin-top: 200px;
     height: 310px;
+    box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
+    -webkit-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
+    -moz-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
 }
 .img{
     width: 300px;
@@ -53,8 +57,7 @@ background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 6
     /* background-color: #CBCBCB;
     background: rgb(71,71,71);
     background: linear-gradient(90deg, rgba(71,71,71,1) 0%, rgba(113,112,112,1) 20%, rgba(240,240,240,1) 100%);  */
-    background: rgb(251,220,166);
-    background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 66%, rgba(240,240,240,1) 89%); 
+    background-color: #89b9b4 ; 
     margin-top: -1.5em;
     height: 300px;
     /* justify-content: center; */
@@ -66,7 +69,7 @@ background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 6
     /* background-color: #a9a9a9;  */
     /* background-color: rgb(251,220,166); */
     
-    background-color: #ffeed0;
+    background-color: #c6fffa;
     border: black solid 2px;
 }
 
@@ -111,3 +114,4 @@ background: linear-gradient(90deg, rgba(251,220,166,1) 9%, rgba(255,246,224,1) 6
     display:flexbox;
     margin-bottom: -16px;
 }
+

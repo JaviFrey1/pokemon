@@ -7,7 +7,7 @@
     text-align:justify;
 }
 .nav{
-    background-color:  #c6b0b0 ;
+    background-color:  #89b9b4 ;
 }
 .home{
     font-weight: bold;
@@ -15,13 +15,12 @@
     color: green;
     background-color: black;
     text-align:justify;
-    
 }
 
 .createLink{
-    background-color: #e4cfcf;
+    background-color:#89b9b4;
     color: black;
-    /* margin-top: 10px; */
+    
 }
 .create{
     
@@ -29,23 +28,30 @@
     text-transform: uppercase;
     font-weight: bold;
     color: black;
-    background-color:  #e3c3c3 ;
+    background-color:  #c6fffa ;
     border-radius: 3px;
     margin-top: 10px;
+    padding: 0em 1em;
 }
-.page{
-    background-color:    #f9f9f9 ;
 
+.create:hover{
+    padding: 0.5em 1em;
+}
+    
+.page{
+    background-color: #234643 ;
+    width: 100%;
+    height: 1400px
 }
 
 .select{
-    background-color: transparent;
+    background-color: white;
     margin-top: 10px;
-    
+    color: grey
 }
 
 .container{
     display: flex;
     justify-content: center;
-    
+
 }

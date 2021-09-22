@@ -5,7 +5,8 @@ import { GET_POKEMONS, GET_TYPES, FILTER_BY_TYPE, FILTER_IF_CREATED, ORDER_BY_NA
 export function getPokemons() {
     return async (dispatch) => {
         try {
-            let urlFront = await axios.get('http://localhost:3001/pokemons');
+            // let urlFront = await axios.get('http://localhost:3001/pokemons');
+            let urlFront = await axios.get('/pokemons');
             return dispatch({
                 type: GET_POKEMONS,
                 payload: urlFront.data
@@ -19,7 +20,8 @@ export function getPokemons() {
 export function getTypes(){
     return async (dispatch) => {
         try{
-            let urlTypes = await axios.get('http://localhost:3001/type');
+            // let urlTypes = await axios.get('http://localhost:3001/type');
+            let urlTypes = await axios.get('/type');
             return dispatch({
                 type: GET_TYPES,
                 payload: urlTypes.data
@@ -39,7 +41,8 @@ export const cleanTypes = ()=> (dispatch) => {
 export function getIds(id){
     return async (dispatch) => {
         try{
-        let urlId = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        // let urlId = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        let urlId = await axios.get(`/pokemons/${id}`)
         dispatch({
             type: GET_ID,
             payload: urlId.data
@@ -61,7 +64,8 @@ export const cleanId = () => (dispatch) => {
 export function getPokemonsName(name){
     return async(dispatch) => {
         try{
-            let res = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
+            // let res = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
+            let res = await axios.get(`/pokemons?name=${name}`);
             // console.log(dispatch)   
             return dispatch({
                 type: GET_NAME_POKEMONS,
@@ -110,3 +114,6 @@ export function orderByAttack(payload){
         payload
     }  
 }
+
+
+

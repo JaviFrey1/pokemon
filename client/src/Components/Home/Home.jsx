@@ -71,11 +71,12 @@ export default function Home() {
     return (
 
         <div className={styles.page}>
-
+            
             <div>
                 <div className={styles.nav}>
                     <Nav />
                     <SearchBar stateName={stateName} handleChange={handleChange} />
+                    
                 </div>
 
                 <div className={styles.createLink}><Link to='/create' className={styles.create}>Create Pokemons</Link></div>

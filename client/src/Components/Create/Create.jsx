@@ -38,16 +38,12 @@ export default function Create() {
     const [succes, setSucces] = useState('');
     const [err, setErr] = useState('');
     const [types, setTypes] = useState([]);
-    // const pokes = useSelector(store => store.types)
     const storeType = useSelector(store => store.types);
 
-    // const clear = () => {
-    //     dispatch(cleanTypes());
-    // }
 
     useEffect(() => {
         dispatch(getTypes());
-        // return () =>  clear();
+
     }, [dispatch]);
 
     useEffect(() => {
@@ -104,6 +100,10 @@ export default function Create() {
         setPoke({ ...poke, height: change.target.value });
     }
 
+    const handleSpeed = (change) => {
+        setPoke({ ...poke, speed: change.target.value })
+    }
+
     const handleSubmit = (submit) => {
         submit.preventDefault();
         let upload = postPokemons(poke);
@@ -123,59 +123,67 @@ export default function Create() {
     }
 
     return (
-        <div>
+        <div className={styles.bacData}>
             <Nav />
-            <form onSubmit={(event) => send(poke, event)}>
-                <div>LET'S CREATE SOME POKEMONS!</div>
-                <div>
-                    <div>
-                        <div>
-                            <h3>DATA</h3>
+            <form onSubmit={(event) => send(poke, event)} className={styles.bacData}>
+                <div className={styles.bacData}></div>
+                <div className={styles.someC}>
+                    <div className={styles.som}>
+                        <div className={styles.bacData}>
+                            <h3 className={styles.type}> DESCRIBE YOUR POKEMON </h3>
                             <div className={styles.name}>
                                 <label>Name: </label>
-                                <input type='text' onChange={handleName} placeholder='Name' value={poke.name} name='name' />
+                                <input type='text' onChange={handleName} placeholder='Name' value={poke.name} name='name' className={styles.inpN} />
                                 {errorName && <h2 className={styles.error}>{errorName}</h2>}
                             </div>
                             <div className={styles.type}>STATS</div>
-                            <div className={styles.stat}>
-                                <label>Life Points:     </label>
-                                <input className={styles.inputHp} type='text' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
-                            </div>
-                            <div className={styles.stat}>
-                                <label>Attack Points:     </label>
-                                <input type='text' onChange={handleAttack} placeholder='Attack Points' value={poke.attack} name='attack' min='0' />
-                            </div>
-                            <div className={styles.stat}>
-                                <label>Defense Points:     </label>
-                                <input className={styles.inputDefense} type='text' onChange={handleDefense} placeholder='Defense Points' value={poke.defense} name='defense' min='0' />
-                            </div>
-                            <div className={styles.stat}>
-                                <label>Weight:      </label>
-                                <input className={styles.statW} type='text' onChange={handleWeight} placeholder='Weight' value={poke.weight} name='weight' min='0' />
-                            </div>
-                            <div className={styles.stat}>
-                                <label>Height:     </label>
-                                <input className={styles.statH} type='text' onChange={handleHeight} placeholder='Height' value={poke.height} name='height' min='0' />
+                            <div className={styles.statContainer}>
+                                <div className={styles.stat}>
+                                    <label>Life Points:     </label>
+                                    <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
+                                </div>
+                                <div className={styles.stat}>
+                                    <label>Attack Points:     </label>
+                                    <input type='number' className={styles.statA} onChange={handleAttack} placeholder='Attack Points' value={poke.attack} name='attack' min='0' />
+                                </div>
+                                <div className={styles.stat}>
+                                    <label>Defense Points:     </label>
+                                    <input className={styles.inputDefense} type='number' onChange={handleDefense} placeholder='Defense Points' value={poke.defense} name='defense' min='0' />
+                                </div>
+                                <div className={styles.stat}>
+                                    <label>Weight:      </label>
+                                    <input className={styles.statW} type='number' onChange={handleWeight} placeholder='Weight' value={poke.weight} name='weight' min='0' />
+                                </div>
+                                <div className={styles.stat}>
+                                    <label>Height:     </label>
+                                    <input className={styles.statH} type='number' onChange={handleHeight} placeholder='Height' value={poke.height} name='height' min='0' />
+                                </div>
+                                <div className={styles.stat}>
+                                    <label>Speed:     </label>
+                                    <input className={styles.statSps} type='number' onChange={handleSpeed} placeholder='Speed' value={poke.speed} name='speed' min='0' />
+                                </div>
                             </div>
                         </div>
                         <div className={styles.imgDiv}>
                             <img className={styles.img} src={pika} alt='Pokemon' />
                         </div>
                     </div>
-                    <div>
+                    <div >
                         <h3 className={styles.type}> TYPES</h3>
-                        {
-                            types.map((el, j) =>
-                                <div className={styles.typeDiv} >
-                                    <input type='checkbox' onChange={handleType} key={j}  value={el.id} id={el.id} />
-                                    {el.name}
-                                </div>
-                            )
-                        }
+                        <div className={styles.divt}>
+                            {
+                                types.map((el, j) =>
+                                    <span className={styles.typeDiv} key={j}>
+                                        <input className={styles.tName} type='checkbox' onChange={handleType} value={el.id} id={el.id} />
+                                        {el.name}
+                                    </span>
+                                )
+                            }
+                        </div>
                     </div>
                     <div className={styles.succes}>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
-                    <div className={styles.error}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON</h2>}</div>
-                    <div><input type='submit' value='CREATE!'  className={styles.btn}/></div>
+                    <div className={styles.error}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON. MAKE SURE YOU COMPLETE ALL THE FIELDS.</h2>}</div>
+                    <div className={styles.bacData}><input type='submit' value='CREATE!' className={styles.btn} /></div>
 
                 </div>
             </form>
