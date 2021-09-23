@@ -5,7 +5,7 @@ import styles from '../Landing/Landing.module.css'
 
 export default function Landing() {
     return (
-        <div className={styles.img}>
+        <div className={styles.img} content="device-width">
             <Link to='/home'>
                 <button className={styles.btn}>
                     <img className={styles.i} src={logo} alt={''} />
