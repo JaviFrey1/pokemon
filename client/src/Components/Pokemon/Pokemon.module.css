@@ -52,4 +52,5 @@
 
 .o{
     background-color: black;
+    display: flex;
 }
