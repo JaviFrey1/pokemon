@@ -82,14 +82,14 @@ export default function Home() {
                 <div className={styles.createLink}><Link to='/create' className={styles.create}>Create Pokemons</Link></div>
                 <div className={styles.container}>
                     <select onChange={click => handleOrder(click)} className={styles.select}>
-
+                        <option value='alpha'>A - Z</option>
                         <option value='asc'>Ascendant</option>
                         <option value='desc'>Descendant</option>
                     </select>
                     <select onChange={click => handleAttack(click)}className={styles.select}>
+                        <option value='oa'>Attack Order</option>
                         <option value='ascA'>Attack Desc</option>
                         <option value='descA'>Attack Asc</option>
-
                     </select>
                     <select onChange={click => handleFilterCreated(click)}className={styles.select}>
                         <option value='all'>Existents</option>
