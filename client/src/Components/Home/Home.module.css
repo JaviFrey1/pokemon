@@ -61,3 +61,7 @@
     flex-grow: 999;
     min-width: 60%;
 }
+
+.o{
+    flex-grow: 1;
+}
