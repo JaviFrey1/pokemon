@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .btn{
