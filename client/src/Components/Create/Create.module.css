@@ -20,7 +20,7 @@
 .error{
     color: red;
     /* background-color: black; */
-    /* border: red solid 2px; */
+    border: red solid 2px;
     text-transform: uppercase;
     
 }
@@ -79,7 +79,7 @@
 
 .succes{
     margin-top: 1em;
-    border: lightgreen solid 2px;
+    /* border: lightgreen solid 1px; */
     /* background-color: #89b9b4; */
 }
 .succes > *{

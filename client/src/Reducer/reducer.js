@@ -88,10 +88,10 @@ function reducer (state = initialState, action){
         }
 
         case ORDER_BY_ATTACK: {
+             
             let sortedPokemons = action.payload === 'ascA'?
                 state.pokemons.sort(function (a,b){
                     if (a.attack > b.attack){
-                        // console.log(a)
                         return 1
                     } else if (b.attack > a.attack) {
                         return -1
