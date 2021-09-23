@@ -17,7 +17,7 @@ export default function Create() {
     }
 
     async function postPokemons(a) {
-        const urlLocal = await axios.post('http://localhost:3001/pokemons', a);
+        const urlLocal = await axios.post('/pokemons', a);
         return urlLocal;
     }
 
@@ -132,34 +132,34 @@ export default function Create() {
                         <div className={styles.bacData}>
                             <h3 className={styles.type}> DESCRIBE YOUR POKEMON </h3>
                             <div className={styles.name}>
-                                <label>Name: </label>
+                                <label >Name: </label>
                                 <input type='text' onChange={handleName} placeholder='Name' value={poke.name} name='name' className={styles.inpN} />
                                 {errorName && <h2 className={styles.error}>{errorName}</h2>}
                             </div>
                             <div className={styles.type}>STATS</div>
                             <div className={styles.statContainer}>
                                 <div className={styles.stat}>
-                                    <label>Life Points:     </label>
+                                    <label className={styles.p}>Life Points:     </label>
                                     <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
                                 </div>
                                 <div className={styles.stat}>
-                                    <label>Attack Points:     </label>
+                                    <label className={styles.p}>Attack Points:     </label>
                                     <input type='number' className={styles.statA} onChange={handleAttack} placeholder='Attack Points' value={poke.attack} name='attack' min='0' />
                                 </div>
                                 <div className={styles.stat}>
-                                    <label>Defense Points:     </label>
+                                    <label className={styles.p}>Defense Points:     </label>
                                     <input className={styles.inputDefense} type='number' onChange={handleDefense} placeholder='Defense Points' value={poke.defense} name='defense' min='0' />
                                 </div>
                                 <div className={styles.stat}>
-                                    <label>Weight:      </label>
+                                    <label className={styles.p}>Weight:      </label>
                                     <input className={styles.statW} type='number' onChange={handleWeight} placeholder='Weight' value={poke.weight} name='weight' min='0' />
                                 </div>
                                 <div className={styles.stat}>
-                                    <label>Height:     </label>
+                                    <label className={styles.p}>Height:     </label>
                                     <input className={styles.statH} type='number' onChange={handleHeight} placeholder='Height' value={poke.height} name='height' min='0' />
                                 </div>
                                 <div className={styles.stat}>
-                                    <label>Speed:     </label>
+                                    <label className={styles.p}>Speed:     </label>
                                     <input className={styles.statSps} type='number' onChange={handleSpeed} placeholder='Speed' value={poke.speed} name='speed' min='0' />
                                 </div>
                             </div>
