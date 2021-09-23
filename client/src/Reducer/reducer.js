@@ -48,7 +48,7 @@ function reducer (state = initialState, action){
         }
 
         case FILTER_BY_NAME:{
-            const fil = action.payload === ''?  state.allPokemons : state.allPokemons.filter(el => el.name.includes(action.payload))// === action.payload)
+            const fil = action.payload === ''?  state.allPokemons : state.allPokemons.filter(el => el.name.includes(action.payload) === action.payload) 
             return{         
                 ...state,
                 pokemons: fil,
