@@ -64,6 +64,7 @@
 }
 
 .o{
-    background-color: black;
+    background-color: #234643;
+    padding-bottom: auto;
     flex-grow: 1;
 }
