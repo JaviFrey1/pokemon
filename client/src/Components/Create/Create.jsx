@@ -175,7 +175,7 @@ export default function Create() {
                                 types.map((el, j) =>
                                     <span className={styles.typeDiv} key={j}>
                                         <input className={styles.tName} type='checkbox' onChange={handleType} value={el.id} id={el.id} />
-                                        {el.name}
+                                        {el.name} 
                                     </span>
                                 )
                             }

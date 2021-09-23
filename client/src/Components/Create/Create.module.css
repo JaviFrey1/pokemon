@@ -79,7 +79,7 @@
 
 .succes{
     margin-top: 1em;
-    /* border: lightgreen solid 2px; */
+    border: lightgreen solid 2px;
     /* background-color: #89b9b4; */
 }
 .succes > *{
@@ -144,7 +144,7 @@
 }
 .typeDiv{
     /* display: row; */
-    /* background-color: #d1a79e; */
+    color: #f7f9f8;
     width: 50px;
     margin-top: 2px;
     text-transform: capitalize;
