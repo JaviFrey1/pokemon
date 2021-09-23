@@ -16,7 +16,7 @@ export default function Card({ name, img, types, id }) {
                     }
                 </div>
             </div>
-            <div>
+            <div className={styles.o}>
                 <div className={styles.box}>
                     <Link to={`/${id}`}>
                         <img src={img} className={styles.img} alt='Image' width='200px' height='200px' />
