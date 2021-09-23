@@ -55,3 +55,8 @@
     justify-content: center;
 
 }
+.group{
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 60%;
+}

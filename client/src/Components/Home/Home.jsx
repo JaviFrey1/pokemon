@@ -122,7 +122,7 @@ export default function Home() {
                 <div>
                     <Paged PokesPerPage={PokesPerPage} allPokemons={allPokes.length} paged={paged} />
                 </div>
-                    <Pokemons list={currentPokes} />
+                    <Pokemons list={currentPokes} className={styles.group}/>
                 <div>
                     <Paged PokesPerPage={PokesPerPage} allPokemons={allPokes.length} paged={paged} />
                 </div>
