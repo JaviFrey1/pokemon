@@ -182,7 +182,7 @@ export default function Create() {
                         </div>
                     </div>
                     <div className={styles.succes}>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
-                    <div className={styles.error}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON. MAKE SURE YOU COMPLETE ALL THE FIELDS.</h2>}</div>
+                    <div className={styles.errorC}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON. MAKE SURE YOU COMPLETE ALL THE FIELDS.</h2>}</div>
                     <div className={styles.bacData}><input type='submit' value='CREATE!' className={styles.btn} /></div>
 
                 </div>
