@@ -64,5 +64,6 @@
 }
 
 .o{
+    background-color: black;
     flex-grow: 1;
 }
