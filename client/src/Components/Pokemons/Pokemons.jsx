@@ -5,7 +5,7 @@ export default function Pokemons({list}){
     return (
         <div className={styles.pokemons}>
             
-            {list.length === 0? <div>Please wait... </div>: list.map((el, i) => <Pokemon key={i} name={el.name} img={el.img} types={el.types} id={el.id}/>)            
+            {list.length === 0? <div className={styles.waiting}>There is no Pokemon's available for this tipe...</div>: list.map((el, i) => <Pokemon key={i} name={el.name} img={el.img} types={el.types} id={el.id}/>)            
             }
         </div>
     )
