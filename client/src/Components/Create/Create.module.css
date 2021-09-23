@@ -20,7 +20,7 @@
 .error{
     color: red;
     /* background-color: black; */
-    border: red solid 2px;
+    /* border: red solid 2px; */
     text-transform: uppercase;
     
 }
@@ -88,7 +88,7 @@
 
 .error{
     margin-top: 1em;
-    /* border: red solid 1px; */
+    border: red solid 1px;
     
 }
 
