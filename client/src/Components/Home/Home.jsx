@@ -64,7 +64,9 @@ export default function Home() {
     function handleChange(e) {
         e.preventDefault();
         setStateName((e.target.value).toLowerCase());
-        dispatch(filterByName((e.target.value).toLowerCase()))
+        dispatch(filterByName((e.target.value).toLowerCase()));
+        setCurrentPage(1);
+
     }
 
 
