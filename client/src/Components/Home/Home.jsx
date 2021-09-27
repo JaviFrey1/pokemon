@@ -14,14 +14,12 @@ import Nav from "../Nav/Nav";
 export default function Home() {
     const dispatch = useDispatch();
     var allPokes = useSelector(store => store.pokemons);
-    // const [pokemons, setPokemons] = useState([])
-    // const names = useSelector(state => state.dataFilter)
     const [currentPage, setCurrentPage] = useState(1);
     const [PokesPerPage, setPokesPerPage] = useState(9);
     const [stateName, setStateName] = useState('');
     const indexOfLastPoke = currentPage * PokesPerPage;
     const indefOfFirstPoke = indexOfLastPoke - PokesPerPage;
-    const currentPokes = allPokes.slice(indefOfFirstPoke, indexOfLastPoke) // [0,...,8] 
+    const currentPokes = allPokes.slice(indefOfFirstPoke, indexOfLastPoke) 
 
 
     const paged = page => {
@@ -32,13 +30,7 @@ export default function Home() {
         dispatch(getPokemons());
     }, [dispatch]) //component didMount
 
-    function handleClick(click) { //boton
-        click.preventDefault();
-        dispatch(getPokemons());
-        dispatch(getTypes())
-    }
-
-    function handleFilterType(click) { //filtrado
+    function handleFilterType(click) { 
         click.preventDefault();
         dispatch(filterByType(click.target.value));
         setCurrentPage(1);
@@ -50,7 +42,7 @@ export default function Home() {
         setCurrentPage(1);
     }
 
-    function handleOrder(click) { //ordenamiento
+    function handleOrder(click) { 
         click.preventDefault();
         dispatch(orderByName(click.target.value));
         setCurrentPage(1);
@@ -66,7 +58,6 @@ export default function Home() {
         setStateName((e.target.value).toLowerCase());
         dispatch(filterByName((e.target.value).toLowerCase()));
         setCurrentPage(1);
-
     }
 
 
@@ -78,7 +69,6 @@ export default function Home() {
                 <div className={styles.nav}>
                     <Nav />
                     <SearchBar stateName={stateName} handleChange={handleChange} />
-                    
                 </div>
 
                 <div className={styles.createLink}><Link to='/create' className={styles.create}>Create Pokemons</Link></div>
