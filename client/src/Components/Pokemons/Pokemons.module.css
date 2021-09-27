@@ -9,6 +9,8 @@
     
 .waiting{
     font-size: 24px;
+    background-color: #234643;
+    flex-grow: 999;
 }
 
 .group{
