@@ -65,7 +65,7 @@ export default function Home() {
 
         <div className={styles.page}>
             
-            <div>
+            <div className={styles.col}> 
                 <div className={styles.nav}>
                     <Nav />
                     <SearchBar stateName={stateName} handleChange={handleChange} />

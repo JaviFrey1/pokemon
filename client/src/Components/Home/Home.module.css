@@ -69,3 +69,7 @@
     padding-bottom: auto;
     flex-grow: 1;
 }
+
+.col{
+    background-color: #234643;
+}
