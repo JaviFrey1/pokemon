@@ -9,7 +9,7 @@ export default function Paged({ PokesPerPage, allPokemons, paged }) {
     }
 
     return (
-        <div>
+        <div className={styles.hola}>
             <nav className={styles.paged}>
                 <ul className = {styles.list}>
                     {pageNumbers?.map(n => (
